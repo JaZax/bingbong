@@ -6,7 +6,7 @@ class dot {
 
         this.fallSpeed = 5;
         this.fallAcceleration = 1;
-        this.color = colors[Math.floor(Math.random() * colors.length)]
+        this.color = colors[Math.floor(Math.random() * colors.length)] + '15'
     }
 
     draw() {
@@ -17,9 +17,11 @@ class dot {
     }
 
     fall() {
-        if (this.y <= canvas.height - 150) {
+        if (this.y <= canvas.height - 170) {
             this.fallSpeed += this.fallAcceleration
             this.y += this.fallSpeed
+        } else {
+            dots.shift()
         }
 
     }
