@@ -14,7 +14,10 @@ let currentTileX = 0
 let dots = []
 
 canvas.addEventListener('click', (e) => {
-    dots.push(new dot(e.clientX, e.clientY, 40))
+    if (e.clientY < canvas.height - 150) {
+        dots.push(new dot(e.clientX, e.clientY, 50))
+    }
+
     console.log(dots)
 })
 
@@ -29,7 +32,7 @@ let action = () => {
 
     for (i = 0; i < 5; i++) {
         ctx.fillStyle = colors[i]
-        ctx.fillRect(currentTileX, canvas.height - 100, tileWidth, 100)
+        ctx.fillRect(currentTileX, canvas.height - 100, tileWidth, 200)
 
         currentTileX = currentTileX + tileWidth
     }

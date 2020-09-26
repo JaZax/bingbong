@@ -4,5 +4,17 @@ body{
     padding: 0;
     overflow: hidden;
 }
-canvas{
+#header{
+    z-index: -1;
+    height: 90vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: 600;
+    opacity: 0.5;
 }

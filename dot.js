@@ -4,9 +4,10 @@ class dot {
         this.y = y;
         this.radius = radius;
 
+        this.opacity = 255;
         this.fallSpeed = 5;
         this.fallAcceleration = 1;
-        this.color = colors[Math.floor(Math.random() * colors.length)] + '15'
+        this.color = colors[Math.floor(Math.random() * colors.length)] + this.opacity.toString(16).toUpperCase()
     }
 
     draw() {
@@ -17,9 +18,10 @@ class dot {
     }
 
     fall() {
-        if (this.y <= canvas.height - 170) {
+        if (this.y <= canvas.height - 185) {
             this.fallSpeed += this.fallAcceleration
             this.y += this.fallSpeed
+            this.opacity -= 20
         } else {
             dots.shift()
         }
