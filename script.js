@@ -20,6 +20,12 @@ canvas.addEventListener('click', (e) => {
 
 let action = () => {
     window.requestAnimationFrame(action);
+    ctx.clearRect(0, 0, canvas.width, canvas.height - 100);
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].draw()
+        dots[i].fall()
+    }
 
     for (i = 0; i < 5; i++) {
         ctx.fillStyle = colors[i]
@@ -28,9 +34,6 @@ let action = () => {
         currentTileX = currentTileX + tileWidth
     }
 
-    for (i = 0; i < dots.length; i++) {
-        dots[i].draw()
-    }
 }
 
 action()
