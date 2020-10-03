@@ -11,10 +11,14 @@ class dot {
     }
 
     draw() {
-        ctx.fillStyle = this.color
+        let colorTile = Math.floor(this.x / tileWidth)
+
+        ctx.fillStyle = colors[colorTile]
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();
+
+        console.log(Math.floor(this.x / tileWidth))
     }
 
     fall() {
