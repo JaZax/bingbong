@@ -18,7 +18,7 @@ class dot {
     }
 
     fall() {
-        if (this.y <= canvas.height - 185) {
+        if (this.y <= canvas.height) {
             this.fallSpeed += this.fallAcceleration
             this.y += this.fallSpeed
             this.opacity -= 20
