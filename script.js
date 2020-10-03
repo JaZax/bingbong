@@ -33,14 +33,6 @@ let dots = []
 
 canvas.addEventListener('click', (e) => {
 
-    var snd1 = new Audio();
-    var src1 = document.createElement("source");
-    src1.type = "audio/mpeg";
-    src1.src = "sounds/1.wav";
-    snd1.appendChild(src1);
-
-    snd1.play()
-
     if (e.clientY < canvas.height - 150) {
         dots.push(new dot(e.clientX, e.clientY, 50))
 
