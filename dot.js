@@ -26,7 +26,6 @@ class dot {
             this.y += this.fallSpeed
             this.opacity -= 20
             if (this.y > canvas.height - this.radius) {
-                console.log('elo')
                 this.playAudio()
             }
         }
@@ -37,14 +36,12 @@ class dot {
     }
 
     playAudio() {
-        console.log(this.colorTile + 1)
-
-        var snd1 = new Audio();
-        var src1 = document.createElement("source");
-        src1.type = "audio/mpeg";
-        src1.src = "sounds/" + this.colorTile + ".wav";
-        snd1.appendChild(src1);
-
-        snd1.play()
+        var sound = new Pizzicato.Sound();
+        sound.play();
+        sound.release = 0.9;
+        sound.frequency = 880; 
+        
+        
+        setTimeout(() => sound.stop(), 500);
     }
 }

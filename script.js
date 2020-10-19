@@ -26,9 +26,6 @@ for (i = 0; i < 5; i++) {
 const notesPaths = ['/1.wav', '/2.wav', '/3.wav', '/4.wav', '/5.wav']
 const notes = []
 
-
-console.log(document.getElementById('audio'))
-
 let dots = []
 
 canvas.addEventListener('click', (e) => {
